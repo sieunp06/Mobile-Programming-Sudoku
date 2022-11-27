@@ -33,13 +33,13 @@ public class MainActivity extends AppCompatActivity {
 
         Button[][] buttons = new Button[9][9];
         for (int i = 0; i < 9; i++) {
-            table = (TableLayout)findViewById(R.id.tableLayout);
+            table = (TableLayout) findViewById(R.id.tableLayout);
             TableRow tableRow = new TableRow(this);
             table.addView(tableRow);
             for (int j = 0; j < 9; j++) {
                 buttons[i][j] = new Button(this);
                 buttons[i][j].setLayoutParams(layoutParams);
-                buttons[i][j].setBackgroundColor(Color.GRAY);
+                buttons[i][j].setBackgroundColor(Color.WHITE);
                 tableRow.addView(buttons[i][j]);
                 int number = board.get(i, j);
                 String buttonText = Integer.toString(number);
