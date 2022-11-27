@@ -11,10 +11,10 @@ import android.widget.TableRow;
 public class MainActivity extends AppCompatActivity {
     BoardGenerator board = new BoardGenerator();
     TableLayout table;
-    private final int left = 3;
-    private final int top = 3;
-    private final int right = 3;
-    private final int bottom = 3;
+    private final int left = 4;
+    private final int top = 4;
+    private final int right = 4;
+    private final int bottom = 4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
