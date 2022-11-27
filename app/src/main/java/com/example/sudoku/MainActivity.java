@@ -9,11 +9,15 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 
 public class MainActivity extends AppCompatActivity {
+    BoardGenerator board = new BoardGenerator();
     TableLayout table;
     private final int left = 3;
     private final int top = 3;
     private final int right = 3;
     private final int bottom = 3;
+
+    private final int row = 9;
+    private final int col = 9;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +41,9 @@ public class MainActivity extends AppCompatActivity {
                 buttons[i][j].setLayoutParams(layoutParams);
                 buttons[i][j].setBackgroundColor(Color.GRAY);
                 tableRow.addView(buttons[i][j]);
+                int number = board.get(i, j);
+                String buttonText = Integer.toString(number);
+                buttons[i][j].setText(buttonText);
             }
         }
     }
