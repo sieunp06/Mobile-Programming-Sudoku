@@ -28,22 +28,20 @@ public class MainActivity extends AppCompatActivity {
                         1.0f);
         layoutParams.setMargins(left, top, right, bottom);
 
-        Button[][] buttons = new Button[9][9];
+        CustomButton[][] buttons = new CustomButton[9][9];
         for (int i = 0; i < 9; i++) {
             table = (TableLayout) findViewById(R.id.tableLayout);
             TableRow tableRow = new TableRow(this);
-            table.addView(tableRow);
-            for (int j = 0; j < 9; j++) {
-                buttons[i][j] = new Button(this);
-                buttons[i][j].setLayoutParams(layoutParams);
-                buttons[i][j].setBackgroundColor(Color.WHITE);
-                tableRow.addView(buttons[i][j]);
-                int isDisplayNumber = (int) (Math.random() * 2);
-                if (isDisplayNumber == 1) {
+                table.addView(tableRow);
+                for (int j = 0; j < 9; j++) {
+                    buttons[i][j] = new CustomButton(this, i, j);
+                    buttons[i][j].setLayoutParams(layoutParams);
+                    buttons[i][j].setBackgroundColor(Color.WHITE);
+                    tableRow.addView(buttons[i][j]);
+                    int isDisplayNumber = (int) (Math.random() * 2);
                     int number = board.get(i, j);
                     String buttonText = Integer.toString(number);
-                    buttons[i][j].setText(buttonText);
-                }
+                    buttons[i][j].set(isDisplayNumber, buttonText);
             }
         }
 
