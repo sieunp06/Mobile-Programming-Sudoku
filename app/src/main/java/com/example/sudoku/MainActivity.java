@@ -36,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
                 for (int j = 0; j < 9; j++) {
                     buttons[i][j] = new CustomButton(this, i, j);
                     buttons[i][j].setLayoutParams(layoutParams);
-                    buttons[i][j].setBackgroundColor(Color.WHITE);
                     tableRow.addView(buttons[i][j]);
                     int isDisplayNumber = (int) (Math.random() * 2);
                     int number = board.get(i, j);
